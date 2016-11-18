@@ -1,8 +1,4 @@
+
 # dotfiles
-shuuji3's dotfiles
 
-# How to use?
-
-Run following command to sync settings:
-
-    rsync -avhr --no-perms --exclude .git/ --exclude README.md --exclude LICENSE $HOME
+shuuji3's dotfiles used by shuuji3/mac-provisioning.
