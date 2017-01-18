@@ -1,6 +1,12 @@
 # set path
-set -g fish_user_paths $HOME/bin $fish_user_paths
-set -g PATH $HOME/.local/bin /usr/local/bin $PATH
+if [ -d $HOME/bin ]
+    set -g fish_user_paths $HOME/bin $fish_user_paths
+end
+for path in $HOME/.local/bin /usr/local/bin
+    if [ -d $path ]
+        set -g PATH $path $PATH
+    end
+end
 
 # pyenv
 status --is-interactive; and source (pyenv init -|psub)
