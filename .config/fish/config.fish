@@ -14,5 +14,9 @@ status --is-interactive; and source (pyenv init -|psub)
 # rbenv
 status --is-interactive; and source (rbenv init -|psub)
 
+# scalaenv
+status --is-interactive; and source (scalaenv init -|psub)
+
 # go
 set -g fish_user_paths $fish_user_paths /usr/local/opt/go/libexec/bin
+
