@@ -17,6 +17,12 @@ status --is-interactive; and source (rbenv init -|psub)
 # scalaenv
 status --is-interactive; and source (scalaenv init -|psub)
 
+# parl
+set -l perl_path /usr/local/Cellar/perl/5.24.0_1/bin/
+if [ -d $perl_path ]
+  set -x PATH $perl_path $PATH
+end
+
 # go
 set -g fish_user_paths $fish_user_paths /usr/local/opt/go/libexec/bin
 
