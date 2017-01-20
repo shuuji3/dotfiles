@@ -15,7 +15,7 @@ status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
 
 # scalaenv
-status --is-interactive; and source (scalaenv init -|psub)
+#status --is-interactive; and source (scalaenv init -|psub)
 
 # parl
 set -l perl_path /usr/local/Cellar/perl/5.24.0_1/bin/
