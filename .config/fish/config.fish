@@ -8,8 +8,9 @@ for path in $HOME/.local/bin /usr/local/bin
     end
 end
 
-# pyenv
+# python
 status --is-interactive; and source (pyenv init -|psub)
+set -x PYTHONPATH $HOME/src $PYTHONPATH
 
 # rbenv
 status --is-interactive; and source (rbenv init -|psub)
