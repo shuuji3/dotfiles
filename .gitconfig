@@ -1,0 +1,13 @@
+[user]
+	name = TAKAHASHI Shuuji
+	email = shuuji3@gmail.com
+[alias]
+	st = status
+	cm = commit
+	di = diff
+	co = checkout
+	br = branch
+[github]
+	user = shuuji3
+[core]
+	autocrlf = input
