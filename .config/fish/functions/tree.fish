@@ -1,4 +1,4 @@
 function tree
     # Set colorize & beautiful ANSI graphic lines
-    eval tree -AC $argv
+    command tree -AC $argv
 end
