@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-;; 98-global-set-key.el
+;;; 98-global-set-key.el
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "M-h") 'backward-kill-word)
 (global-set-key (kbd "C-m") 'newline-and-indent)
@@ -23,7 +23,7 @@
 
 (global-set-key (kbd "C-#") 'hs-toggle-hiding)
 
-;; isearch
+;;; isearch
 (define-key isearch-mode-map "\C-h" 'isearch-delete-char)
 (define-key isearch-mode-map "\M-h" 'isearch-backward-kill-word)
 
@@ -36,10 +36,10 @@
   (setq mac-command-modifier 'meta)
   (setq mac-alternate-modifier 'super))
 
-;; tramp
+;;; tramp
 (require 'tramp)
-;; add gcloud ssh support
-;; cf. [gcloud compute ssh でも tramp したい！](http://qiita.com/tanatana/items/218b19808f2428b125fe)
+;;; add gcloud ssh support
+;;; cf. [gcloud compute ssh でも tramp したい！](http://qiita.com/tanatana/items/218b19808f2428b125fe)
 (add-to-list 'tramp-methods
   '("gc"
     (tramp-login-program "gcloud compute ssh")
@@ -53,15 +53,15 @@
       ("-o" "StrictHostKeyChecking=no")))
     (tramp-default-port 22)))
 
-;; jslint
+;;; jslint
 (require 'flymake-jslint)
 (add-hook 'js-mode-hook 'flymake-jslint-load)
 
-;; crontab-mode
+;;; crontab-mode
 (add-to-list 'auto-mode-alist '("\\.cron\\(tab\\)?\\'" . crontab-mode))
 (add-to-list 'auto-mode-alist '("cron\\(tab\\)?\\."    . crontab-mode))
 
-;; helm
+;;; helm
 (require 'helm-config)
 (require 'helm-ag)
 (require 'helm-descbinds)
@@ -80,19 +80,28 @@
 (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
 (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 
-;; add an extension `psgi` for perl-mode
+;;; add an extension `psgi` for perl-mode
 (add-to-list 'auto-mode-alist '("\\.psgi$" . perl-mode))
 
-;; edit server chrome extension
+;;; edit server chrome extension
 (require 'edit-server)
 (add-hook 'edit-server-start-hook 'edit-server-maybe-dehtmlize-buffer)
 (add-hook 'edit-server-done-hook 'edit-server-maybe-htmlize-buffer)
 (edit-server-start)
 
-;; flycheck
+;;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-;; customize
+;;; paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;;; customize
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -110,7 +119,7 @@
  '(linum-format " %4d")
  '(package-selected-packages
    (quote
-    (geiser ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (paredit geiser ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil))
@@ -121,7 +130,7 @@
  ;; If there is more than one, they won't work right.
  '(linum ((t (:inherit font-lock-comment-face)))))
 
-;; emacsclient server
+;;; emacsclient server
 (server-start)
 
 (provide 'init)
