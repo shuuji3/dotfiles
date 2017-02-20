@@ -93,13 +93,45 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;;; paredit
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(require 'paredit)
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
 (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'geiser-repl-mode-hook           #'enable-paredit-mode)
+
+;;; slime
+(setq inferior-lisp-program "/usr/local/bin/ccl")
+(setq slime-contribs '(slime-fancy))
+
+;;; popwin
+(require 'popwin)
+(popwin-mode 1)
+
+;;; company
+(add-hook 'after-init-hook 'global-company-mode)
+;; (company-quickhelp-mode)
+
+;;; company-emoji
+(require 'company-emoji)
+(add-to-list 'company-backends 'company-emoji)
+(defun --set-emoji-font (frame)
+  "Adjust the font settings of FRAME so Emacs can display emoji properly."
+  (if (eq system-type 'darwin)
+      ;; For NS/Cocoa
+      (set-fontset-font t 'symbol (font-spec :family "Apple Color Emoji") frame 'prepend)
+    ;; For Linux
+    (set-fontset-font t 'symbol (font-spec :family "Symbola") frame 'prepend)))
+(--set-emoji-font nil)
+(add-hook 'after-make-frame-functions '--set-emoji-font)
+
+;;; initial frame size
+(setq initial-frame-alist
+      '((top . 1) (left . 1) (width . 85) (height . 55)))
+;; (setq default-frame-alist
+;;       '((top . 1) (left . 1) (width . 85) (height . 55)))
 
 ;;; customize
 (custom-set-variables
@@ -119,7 +151,7 @@
  '(linum-format " %4d")
  '(package-selected-packages
    (quote
-    (paredit geiser ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (company-quickhelp company-emoji company fuzzy auto-complete popwin slime paredit geiser ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil))
