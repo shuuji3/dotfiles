@@ -51,4 +51,6 @@ flycheck_*.el
 # End of https://www.gitignore.io/api/emacs
 
 recentf
-var
+var/
+.python-environments/
+ac-comphist.dat
