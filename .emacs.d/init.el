@@ -65,6 +65,7 @@
 (require 'helm-config)
 (require 'helm-ag)
 (require 'helm-descbinds)
+(require 'helm-find)
 (helm-mode 1)
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
@@ -102,17 +103,53 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (add-hook 'geiser-repl-mode-hook           #'enable-paredit-mode)
 
-;;; slime
-(setq inferior-lisp-program "/usr/local/bin/ccl")
-(setq slime-contribs '(slime-fancy))
-
 ;;; popwin
 (require 'popwin)
 (popwin-mode 1)
 
+;;; slime
+(require 'slime)
+(setq inferior-lisp-program "/usr/local/bin/ccl")
+(setq slime-contribs '(slime-fancy))
+(slime-setup '(slime-repl slime-fancy slime-banner slime-indentation slime-company))
+(setq slime-net-coding-system 'utf-8-unix)
+(append
+ (list
+  '("*slime-apropos*")
+  '("*slime-macroexpansion*")
+  '("*slime-description*")
+  '("*slime-compilation*" :noselect t)
+  '("*slime-xref*")
+  '(sldb-mode :stick t)
+  '(slime-repl-mode)
+  '(slime-connection-list-mode))
+ popwin:special-display-config)
+
 ;;; company
+(require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
+(setq company-idle-delay 0.3)
+(setq company-minimum-prefix-length 2)
+(setq company-echo-delay 0)
 ;; (company-quickhelp-mode)
+(global-set-key (kbd "C-M-i") 'company-complete)
+(define-key company-active-map (kbd "C-n") 'company-select-next)
+(define-key company-active-map (kbd "C-p") 'company-select-previous)
+(define-key company-search-map (kbd "C-n") 'company-select-next)
+(define-key company-search-map (kbd "C-p") 'company-select-previous)
+(define-key company-active-map (kbd "C-s") 'company-filter-candidates)
+(define-key company-active-map (kbd "C-i") 'company-complete-selection)
+(define-key company-active-map (kbd "C-h") 'backward-delete-char)
+(define-key company-active-map (kbd "C-d") 'company-show-doc-buffer)
+(define-key company-active-map (kbd "M-.") 'company-show-location)
+(define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete)
+(define-key inf-ruby-mode-map (kbd "C-i") 'company-complete)
+
+;;; company-jedi
+(add-to-list 'company-backends 'company-jedi)
+
+;;; company-go
+(require 'company-go)
 
 ;;; company-emoji
 (require 'company-emoji)
@@ -129,9 +166,26 @@
 
 ;;; initial frame size
 (setq initial-frame-alist
-      '((top . 1) (left . 1) (width . 85) (height . 55)))
+      '((top . 1) (left . 1) (width . 100) (height . 55)))
 ;; (setq default-frame-alist
 ;;       '((top . 1) (left . 1) (width . 85) (height . 55)))
+
+;;; jedi
+(require 'jedi-core)
+(setq jedi:complete-on-dot t)
+(setq jedi:use-shortcuts t)
+(add-hook 'python-mode-hook 'jedi:setup)
+
+;;; exec-path-from-shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
+
+;;; ruby
+(require 'inf-ruby)
+(add-hook 'ruby-mode-hook 'inf-ruby-mode-hook)
+(setq inf-ruby-default-implementation "pry")
+
 
 ;;; customize
 (custom-set-variables
@@ -151,7 +205,7 @@
  '(linum-format " %4d")
  '(package-selected-packages
    (quote
-    (company-quickhelp company-emoji company fuzzy auto-complete popwin slime paredit geiser ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil))
