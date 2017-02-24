@@ -2,7 +2,7 @@
 if [ -d $HOME/bin ]
     set -g fish_user_paths $HOME/bin $fish_user_paths
 end
-for path in $HOME/.local/bin /usr/local/bin
+for path in $HOME/.local/bin 
     if [ -d $path ]
         set -g PATH $path $PATH
     end
@@ -25,7 +25,8 @@ if [ -d $perl_path ]
 end
 
 # go
-set -g fish_user_paths $fish_user_paths /usr/local/opt/go/libexec/bin
+#set -g fish_user_paths $fish_user_paths /usr/local/opt/go/libexec/bin
+set -x GOPATH $HOME/go
 
 # google-cloud-sdk
 set -x PATH /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin $PATH
