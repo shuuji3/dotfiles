@@ -65,7 +65,7 @@
 (require 'helm-config)
 (require 'helm-ag)
 (require 'helm-descbinds)
-(require 'helm-find)
+(require 'helm)
 (helm-mode 1)
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
@@ -143,7 +143,6 @@
 (define-key company-active-map (kbd "C-d") 'company-show-doc-buffer)
 (define-key company-active-map (kbd "M-.") 'company-show-location)
 (define-key emacs-lisp-mode-map (kbd "C-M-i") 'company-complete)
-(define-key inf-ruby-mode-map (kbd "C-i") 'company-complete)
 
 ;;; company-jedi
 (add-to-list 'company-backends 'company-jedi)
@@ -185,7 +184,7 @@
 (require 'inf-ruby)
 (add-hook 'ruby-mode-hook 'inf-ruby-mode-hook)
 (setq inf-ruby-default-implementation "pry")
-
+(define-key inf-ruby-mode-map (kbd "C-i") 'company-complete)
 
 ;;; customize
 (custom-set-variables
