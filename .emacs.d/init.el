@@ -199,6 +199,7 @@
    (quote
     ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
  '(global-linum-mode t)
+ '(global-whitespace-newline-mode t)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(linum-format " %4d")
