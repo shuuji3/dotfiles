@@ -186,6 +186,16 @@
 (setq inf-ruby-default-implementation "pry")
 (define-key inf-ruby-mode-map (kbd "C-i") 'company-complete)
 
+;;; visual-regex-steroids
+(require 'visual-regexp-steroids)
+(define-key global-map (kbd "C-c r") 'vr/replace)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
+;; if you use multiple-cursors, this is for you:
+(define-key global-map (kbd "C-c m") 'vr/mc-mark)
+;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
+(define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
+(define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
+
 ;;; customize
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -204,7 +214,7 @@
  '(linum-format " %4d")
  '(package-selected-packages
    (quote
-    (flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (multiple-cursors visual-regexp-steroids jedi flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil))
