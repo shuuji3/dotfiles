@@ -40,8 +40,9 @@ end
 
 local function handleGlobalAppEvent(name, event, app)
    if event == hs.application.watcher.activated then
+      name = string.lower(name)
       -- hs.alert.show(name)
-      if name == "iTerm2" or name == 'Emacs' then
+      if name == "iterm2" or name == 'emacs' then
          disableAllHotkeys()
       else
          enableAllHotkeys()
@@ -57,11 +58,16 @@ remapKey({'ctrl'}, 'f', keyCode('right'))
 remapKey({'ctrl'}, 'b', keyCode('left'))
 remapKey({'ctrl'}, 'n', keyCode('down'))
 remapKey({'ctrl'}, 'p', keyCode('up'))
+remapKey({'ctrl', 'shift'}, 'f', keyCode('right', {'shift'}))
+remapKey({'ctrl', 'shift'}, 'b', keyCode('left', {'shift'}))
+remapKey({'ctrl', 'shift'}, 'n', keyCode('down', {'shift'}))
+remapKey({'ctrl', 'shift'}, 'p', keyCode('up', {'shift'}))
 remapKey({'ctrl'}, 'e', keyCode('right', {'cmd'}))
 remapKey({'ctrl'}, 'a', keyCode('left', {'cmd'}))
 
 -- テキスト編集
 remapKey({'ctrl'}, 'm', keyCode('return'))
+remapKey({'ctrl', 'shift'}, 'm', keyCode('return', {'shift'}))
 remapKey({'ctrl'}, 'i', keyCode('tab'))
 remapKey({'ctrl', 'shift'}, 'i', keyCode('tab', {'shift'}))
 remapKey({'ctrl'}, 'w', keyCode('x', {'cmd'}))
@@ -83,3 +89,15 @@ remapKey({'ctrl'}, 'v', keyCode('pagedown'))
 remapKey({'alt'}, 'v', keyCode('pageup'))
 remapKey({'cmd', 'shift'}, ',', keyCode('home'))
 remapKey({'cmd', 'shift'}, '.', keyCode('end'))
+
+-- numpad
+remapKey({'alt'}, 'm', keyCode('1'))
+remapKey({'alt'}, ',', keyCode('2'))
+remapKey({'alt'}, '.', keyCode('3'))
+remapKey({'alt'}, 'j', keyCode('4'))
+remapKey({'alt'}, 'k', keyCode('5'))
+remapKey({'alt'}, 'l', keyCode('6'))
+remapKey({'alt'}, 'u', keyCode('7'))
+remapKey({'alt'}, 'i', keyCode('8'))
+remapKey({'alt'}, 'o', keyCode('9'))
+remapKey({'alt'}, 'n', keyCode('0'))
