@@ -68,6 +68,7 @@ remapKey({'ctrl'}, 'a', keyCode('left', {'cmd'}))
 -- テキスト編集
 remapKey({'ctrl'}, 'm', keyCode('return'))
 remapKey({'ctrl', 'shift'}, 'm', keyCode('return', {'shift'}))
+remapKey({'ctrl', 'cmd'}, 'm', keyCode('return', {'cmd'}))
 remapKey({'ctrl'}, 'i', keyCode('tab'))
 remapKey({'ctrl', 'shift'}, 'i', keyCode('tab', {'shift'}))
 remapKey({'ctrl'}, 'w', keyCode('x', {'cmd'}))
