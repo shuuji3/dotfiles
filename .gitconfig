@@ -7,11 +7,9 @@
 	di = diff
 	co = checkout
 	br = branch
-[github]
-	user = shuuji3
 [core]
 	autocrlf = input
-	excludesfile = /Users/shuuji/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -19,4 +17,6 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/shuuji/.stCommitMsg
+	template = ~/.stCommitMsg
+[include]
+    path = ~/.gitconfig.github
