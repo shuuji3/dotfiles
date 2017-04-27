@@ -197,7 +197,14 @@
 (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
 ;;; emmet-mode
-(add-to-list 'auto-mode-alist '("\\.html?$" . emmet-mode))
+(add-to-list 'auto-mode-alist '("\\.html?$" . (html-mode emmet-mode)))
+
+;;; cua-mode
+(cua-selection-mode t)
+(global-set-key (kbd "M-RET") 'cua-set-rectangle-mark)
+
+;;; tuareg-mode
+(add-to-list 'auto-mode-alist '("\\.ml$" . tuareg-mode))
 
 ;;; customize
 (custom-set-variables
@@ -206,6 +213,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(backup-directory-alist (quote (("" . "/tmp"))))
+ '(c-default-style
+   (quote
+    ((c-mode . "linux")
+     (java-mode . "java")
+     (awk-mode . "awk")
+     (other . "gnu"))))
  '(column-number-mode t)
  '(custom-enabled-themes (quote (material)))
  '(custom-safe-themes
@@ -217,7 +230,7 @@
  '(linum-format " %4d")
  '(package-selected-packages
    (quote
-    (php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids jedi flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil))
