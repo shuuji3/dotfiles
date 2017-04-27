@@ -36,3 +36,6 @@ set -x MANPATH /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/help
 function git --description 'Alias for hub, which wraps git to provide extra functionality with GitHub.'
     hub $argv
 end
+
+# OPAM configuration
+. $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null or true
