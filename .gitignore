@@ -2,3 +2,4 @@
 .config/fish/fishd.*
 
 .karabiner.d/log/
+.gitconfig.github
