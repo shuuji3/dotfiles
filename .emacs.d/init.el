@@ -197,7 +197,7 @@
 (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
 ;;; emmet-mode
-(add-to-list 'auto-mode-alist '("\\.html?$" . (html-mode emmet-mode)))
+(add-to-list 'auto-mode-alist '("\\.html?$" . emmet-mode))
 
 ;;; cua-mode
 (cua-selection-mode t)
@@ -232,10 +232,11 @@
  '(linum-format " %4d")
  '(package-selected-packages
    (quote
-    (merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-mode t)
  '(tab-width 4)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(typescript-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
