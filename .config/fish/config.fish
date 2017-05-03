@@ -37,5 +37,14 @@ function git --description 'Alias for hub, which wraps git to provide extra func
     hub $argv
 end
 
-# OPAM configuration
+# OPAM configuration for OCaml
 . $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null or true
+
+# android
+set -x ANDROID_HOME $HOME/Library/Android/sdk/
+set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
+
+# nvm: node version manager
+set -x NVM_DIR $HOME/.nvm
+sh /usr/local/opt/nvm/nvm.sh
+
