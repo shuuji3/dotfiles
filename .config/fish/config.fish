@@ -46,5 +46,5 @@ set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
 # nvm: node version manager
 set -x NVM_DIR $HOME/.nvm
-sh /usr/local/opt/nvm/nvm.sh
+source ~/.config/fish/nvm-wrapper/nvm.fish
 
