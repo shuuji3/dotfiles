@@ -29,7 +29,6 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
 (when (eq window-system 'darwin)
@@ -208,6 +207,11 @@
 (add-hook 'tuareg-mode-hook 'merlin-mode)
 (add-hook 'caml-mode-hook 'merlin-mode)
 
+;;; org-mode
+(setq org-src-fontify-natively t)       ;coloring program source code
+(setq org-return-follows-link t)        ;when return on the link, open
+                                        ;the browser
+
 ;;; customize
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -230,9 +234,10 @@
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(linum-format " %4d")
+ '(org-agenda-files (quote ("~/Dropbox/org/todo.org")))
  '(package-selected-packages
    (quote
-    (persistent-scratch fortune-cookie angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (rhtml-mode persistent-scratch fortune-cookie angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil)

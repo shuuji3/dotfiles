@@ -9,7 +9,7 @@
 	br = branch
 [core]
 	autocrlf = input
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/shuuji/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
