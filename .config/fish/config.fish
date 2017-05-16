@@ -46,7 +46,7 @@ set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
 # nvm: node version manager
 set -x NVM_DIR $HOME/.nvm
-source ~/.config/fish/nvm-wrapper/nvm.fish
+source ~/src/nvm-wrapper/nvm.fish
 
 # pip completion
 source (pip completion --fish -|psub)
