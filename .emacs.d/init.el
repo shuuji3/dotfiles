@@ -211,6 +211,10 @@
 (setq org-src-fontify-natively t)       ;coloring program source code
 (setq org-return-follows-link t)        ;when return on the link, open
                                         ;the browser
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
 
 ;;; customize
 (custom-set-variables
@@ -231,13 +235,17 @@
    (quote
     ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
  '(global-linum-mode t)
+ '(helm-recentf-fuzzy-match t)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(linum-format " %4d")
  '(org-agenda-files (quote ("~/Dropbox/org/todo.org")))
+ '(org-startup-indented t)
  '(package-selected-packages
    (quote
-    (rhtml-mode persistent-scratch fortune-cookie angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (processing-mode rhtml-mode persistent-scratch fortune-cookie angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+ '(recentf-max-menu-items 1000)
+ '(recentf-max-saved-items 2000)
  '(recentf-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil)
@@ -247,7 +255,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(linum ((t (:inherit font-lock-comment-face)))))
+ '(linum ((t (:inherit font-lock-comment-face))))
+ '(org-indent ((t nil)) t))
 
 ;;; emacsclient server
 (server-start)
