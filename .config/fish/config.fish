@@ -50,3 +50,4 @@ source ~/src/nvm-wrapper/nvm.fish
 
 # pip completion
 source (pip completion --fish -|psub)
+set -g fish_user_paths "/usr/local/opt/libressl/bin" $fish_user_paths
