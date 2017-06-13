@@ -169,14 +169,15 @@
 ;;       '((top . 1) (left . 1) (width . 85) (height . 55)))
 
 ;;; jedi
-(require 'jedi-core)
-(setq jedi:complete-on-dot t)
-(setq jedi:use-shortcuts t)
+;; (require 'jedi-core)
+;; (setq jedi:complete-on-dot t)
+;; (setq jedi:use-shortcuts t)
 ;; (add-hook 'python-mode-hook 'jedi:setup)
 
 ;;; exec-path-from-shell
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "PYTHONPATH")
   (exec-path-from-shell-copy-env "GOPATH"))
 
 ;;; ruby
@@ -196,7 +197,7 @@
 (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
 ;;; emmet-mode
-(add-to-list 'auto-mode-alist '("\\.html?$" . emmet-mode))
+(add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
 
 ;;; cua-mode
 (cua-selection-mode t)
@@ -215,6 +216,19 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
+
+;;; migemo
+(require 'migemo)
+(setq migemo-command "cmigemo")
+(setq migemo-options '("-q" "--emacs"))
+
+;; Set your installed path
+(setq migemo-dictionary "/usr/local/opt/cmigemo/share/migemo/utf-8/migemo-dict")
+
+(setq migemo-user-dictionary nil)
+(setq migemo-regex-dictionary nil)
+(setq migemo-coding-system 'utf-8-unix)
+(migemo-init)
 
 ;;; customize
 (custom-set-variables
@@ -235,20 +249,41 @@
    (quote
     ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
  '(global-linum-mode t)
+ '(helm-mini-default-sources
+   (quote
+    (helm-source-buffers-list helm-source-bookmarks helm-source-recentf helm-source-buffer-not-found)))
  '(helm-recentf-fuzzy-match t)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(linum-format " %4d")
  '(org-agenda-files (quote ("~/Dropbox/org/todo.org")))
+ '(org-log-done (quote note))
  '(org-startup-indented t)
  '(package-selected-packages
    (quote
-    (processing-mode rhtml-mode persistent-scratch fortune-cookie angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (twittering-mode web-mode migemo processing-mode rhtml-mode persistent-scratch fortune-cookie angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-max-menu-items 1000)
  '(recentf-max-saved-items 2000)
  '(recentf-mode t)
  '(tab-width 4)
  '(tool-bar-mode nil)
+ '(twittering-display-remaining t)
+ '(twittering-status-format
+   "%RT{↻ %R
+} %i %S(@%s) %C / %@ %r
+%FOLD[  ]{%T %QT{
++----
+%FOLD[|]{%S(@%s)  %C(%@):
+%FOLD[  ]{%T }}
++----}}
+  via %f @ %l
+--------------------------------------------------------------------------------")
+ '(twittering-timeline-footer "-- old --")
+ '(twittering-timeline-header "-- new --
+")
+ '(twittering-tinyurl-service (quote goo\.gl))
+ '(twittering-use-icon-storage t)
+ '(twittering-use-native-retweet t)
  '(typescript-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
