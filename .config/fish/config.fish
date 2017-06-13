@@ -51,3 +51,22 @@ source ~/src/nvm-wrapper/nvm.fish
 # pip completion
 source (pip completion --fish -|psub)
 set -g fish_user_paths "/usr/local/opt/libressl/bin" $fish_user_paths
+
+# scrapy: add splash subcommand
+function scrapy
+    set script '
+import sys
+try:
+    from urllib.parse import quote
+except ImportError:
+    from urllib import quote
+fetch_url = quote(sys.argv[1])
+url_base = "http://localhost:8050/render.html?url={url}&timeout=10&wait=0.5"
+url = url_base.format(url=fetch_url)
+print(url)'
+    if [ $argv[1] = 'splash' ]
+        command scrapy shell (python -c $script $argv[2])
+    else
+        command scrapy $argv
+    end
+end
