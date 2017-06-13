@@ -61,8 +61,7 @@ try:
 except ImportError:
     from urllib import quote
 fetch_url = quote(sys.argv[1])
-url_base = "http://localhost:8050/render.html?url={url}&timeout=10&wait=0.5"
-url = url_base.format(url=fetch_url)
+url = "http://localhost:8050/render.html?url={url}&timeout=10&wait=0.5".format(url=fetch_url)
 print(url)'
     if [ $argv[1] = 'splash' ]
         command scrapy shell (python -c $script $argv[2])
