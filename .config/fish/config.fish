@@ -10,7 +10,7 @@ end
 
 # python
 status --is-interactive; and source (pyenv init -|psub)
-set -x PYTHONPATH $HOME/src $PYTHONPATH
+set -x PYTHONPATH $HOME/src
 
 # rbenv
 status --is-interactive; and source (rbenv init -|psub)
