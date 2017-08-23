@@ -230,6 +230,20 @@
 (setq migemo-coding-system 'utf-8-unix)
 (migemo-init)
 
+;;; haskell
+(require 'haskell)
+(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
+(add-hook 'haskell-mode-hook 'haskell-doc-mode)
+(setq haskell-process-type 'auto)
+(setq haskell-process-path-ghci "stack")
+(setq haskell-process-args-ghci '("ghci"))
+
+;;; credencials
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+(load "credencials")
+
 ;;; customize
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -249,6 +263,7 @@
    (quote
     ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
  '(global-linum-mode t)
+ '(global-wakatime-mode t)
  '(helm-mini-default-sources
    (quote
     (helm-source-buffers-list helm-source-bookmarks helm-source-recentf helm-source-buffer-not-found)))
@@ -261,7 +276,7 @@
  '(org-startup-indented t)
  '(package-selected-packages
    (quote
-    (twittering-mode web-mode migemo processing-mode rhtml-mode persistent-scratch fortune-cookie angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
+    (wakatime-mode mediawiki scratch gitignore-mode twittering-mode web-mode migemo processing-mode rhtml-mode persistent-scratch fortune-cookie angular-mode merlin markdown-mode jedi tuareg caml typescript-mode php-mode php+-mode emmet-mode django-mode company-ghci company-ghc flycheck-haskell multiple-cursors visual-regexp-steroids flymake-lua company-lua lua-mode company-inf-ruby inf-ruby company-go slime-company exec-path-from-shell company-jedi company-quickhelp company-emoji company fuzzy popwin slime paredit ein edit-server-htmlize edit-server gist helm-ag helm-ag-r helm-descbinds helm helm-dash magit autopair crontab-mode material-theme dart-mode flymake-jslint google-translate fish-mode yaml-mode osx-plist)))
  '(recentf-max-menu-items 1000)
  '(recentf-max-saved-items 2000)
  '(recentf-mode t)
@@ -284,7 +299,8 @@
  '(twittering-tinyurl-service (quote goo\.gl))
  '(twittering-use-icon-storage t)
  '(twittering-use-native-retweet t)
- '(typescript-indent-level 2))
+ '(typescript-indent-level 2)
+ '(wakatime-python-bin "/Users/shuuji/.pyenv/versions/3.6.0/bin/python"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
