@@ -244,6 +244,9 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (load "credencials")
 
+;;; y-or-n
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;;; customize
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -264,6 +267,7 @@
     ("98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" default)))
  '(global-linum-mode t)
  '(global-wakatime-mode t)
+ '(haskell-interactive-popup-errors nil)
  '(helm-mini-default-sources
    (quote
     (helm-source-buffers-list helm-source-bookmarks helm-source-recentf helm-source-buffer-not-found)))
