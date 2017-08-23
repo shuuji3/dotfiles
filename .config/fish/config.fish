@@ -61,7 +61,7 @@ try:
 except ImportError:
     from urllib import quote
 fetch_url = quote(sys.argv[1])
-url = "http://localhost:8050/render.html?url={url}&timeout=10&wait=0.5".format(url=fetch_url)
+url = "http://localhost:8050/render.html?url={url}&timeout=10&wait=3".format(url=fetch_url)
 print(url)'
     if [ $argv[1] = 'splash' ]
         command scrapy shell (python -c $script $argv[2])
@@ -69,3 +69,13 @@ print(url)'
         command scrapy $argv
     end
 end
+
+# waifu2x: enable python2 environment
+function waifu
+    env PYENV_VERSION=2.7.13 waifu --scale 2 $argv
+end
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+# wine
+set -x PATH "$HOME/Applications/Wine Devel.app/Contents/Resources/wine/bin" $PATH
