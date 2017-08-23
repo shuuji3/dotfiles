@@ -268,6 +268,7 @@
  '(global-linum-mode t)
  '(global-wakatime-mode t)
  '(haskell-interactive-popup-errors nil)
+ '(haskell-program-name "stack ghci")
  '(helm-mini-default-sources
    (quote
     (helm-source-buffers-list helm-source-bookmarks helm-source-recentf helm-source-buffer-not-found)))
