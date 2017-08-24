@@ -8,6 +8,9 @@
 	co = checkout
 	br = branch
     cp = cherry-pick
+    sdi = diff --staged
+    sl = log --all --branches --graph --oneline --decorate
+    gl = log --all --branches --graph
 [core]
 	autocrlf = input
 	excludesfile = /Users/shuuji/.gitignore_global
