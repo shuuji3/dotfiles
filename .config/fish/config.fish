@@ -10,7 +10,7 @@ end
 
 # python
 status --is-interactive; and source (pyenv init -|psub)
-set -x PYTHONPATH $HOME/src
+set -x PYTHONPATH $HOME/.ghq/github.com/shuuji3:$HOME/src
 
 # rbenv
 status --is-interactive; and source (rbenv init -|psub)
@@ -46,7 +46,7 @@ set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
 # nvm: node version manager
 set -x NVM_DIR $HOME/.nvm
-source ~/src/nvm-wrapper/nvm.fish
+source ~/.ghq/github.com/passcod/nvm-fish-wrapper/nvm.fish
 
 # pip completion
 source (pip completion --fish -|psub)
@@ -79,3 +79,6 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 
 # wine
 set -x PATH "$HOME/Applications/Wine Devel.app/Contents/Resources/wine/bin" $PATH
+
+# flutter
+set -x PATH $HOME/.ghq/github.com/flutter/flutter/bin $PATH
