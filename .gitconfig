@@ -14,12 +14,6 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/shuuji/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Users/shuuji/Library/Caches/com.torusknot.SourceTreeNotMAS/org.sparkle-project.Sparkle/SourceTree 125/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [commit]
 	template = ~/.stCommitMsg
 [include]
