@@ -22,6 +22,6 @@ function fish_prompt --description 'Write out the prompt'
     # Set __fish_git_prompt options
     set -g __fish_git_prompt_show_informative_status true
     
-    echo -s (set_color purple) (env LANG=C date "+%Y/%m/%d %a %H:%M:%S") ' ' (set_color blue) "$USER" @ "$__fish_prompt_hostname" ' ' (set_color $color_cwd) (prompt_pwd) (set_color yellow) (__fish_git_prompt) "$__fish_git_prompt_dirty" (set_color normal)
+    echo -s (set_color purple) (env LANG=C date "+%Y-%m-%d(%a) %H:%M:%S") ' ' (set_color blue) "$USER" @ "$__fish_prompt_hostname" ' ' (set_color $color_cwd) (prompt_pwd) (set_color yellow) (__fish_git_prompt) "$__fish_git_prompt_dirty" (set_color normal)
     echo -n "$suffix "
 end
