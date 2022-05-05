@@ -1,0 +1,9 @@
+[character]
+success_symbol = "[>](bold green)"
+
+[gcloud]
+format = 'on [$symbol ($active)]($style) '
+
+[kubernetes]
+disabled = false
+
