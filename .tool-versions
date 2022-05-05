@@ -1,0 +1,4 @@
+nodejs 16.13.1
+yarn 1.22.18
+kubectl 1.24.0
+pnpm 7.0.0
