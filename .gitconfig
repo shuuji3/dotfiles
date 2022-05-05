@@ -1,20 +1,45 @@
 [user]
 	name = TAKAHASHI Shuuji
 	email = shuuji3@gmail.com
-[alias]
-	st = status --short --branch
-	cm = commit
-	di = diff
-	co = checkout
-	br = branch
-    cp = cherry-pick
-    sdi = diff --staged
-    sl = log --all --branches --graph --oneline --decorate
-    gl = log --all --branches --graph
+
+[init]
+	defaultBranch = main
+
 [core]
 	autocrlf = input
-	excludesfile = /Users/shuuji/.gitignore_global
-[commit]
-	template = ~/.stCommitMsg
-[include]
-    path = ~/.gitconfig.github
+	excludesfile = ~/.gitignore_global
+	pager = delta
+
+[branch]
+	autosetuprebase = always
+
+[alias]
+	br = branch
+	cm = commit
+	co = checkout
+	di = diff
+	st = status
+	sw = switch
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	side-by-side = true
+	light = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[includeIf "gitdir:~/src/navagis/"]
+	path = ~/.gitconfig_navagis
