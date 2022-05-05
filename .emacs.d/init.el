@@ -305,7 +305,6 @@
  '(twittering-use-icon-storage t)
  '(twittering-use-native-retweet t)
  '(typescript-indent-level 2)
- '(wakatime-python-bin "/Users/shuuji/.pyenv/versions/3.6.0/bin/python"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
