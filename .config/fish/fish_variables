@@ -36,6 +36,6 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/opt/homebrew/opt/openssl\x403/bin\x1e/opt/homebrew/opt/util\x2dlinux/sbin\x1e/opt/homebrew/opt/util\x2dlinux/bin
+SETUVAR fish_user_paths:/Users/shuuji3/\x2ekrew/bin\x1e/Users/shuuji3/bin\x1e/Users/shuuji3/go/bin\x1e/Users/shuuji3/\x2ecargo/bin\x1e/opt/homebrew/opt/openssl\x403/bin\x1e/opt/homebrew/opt/util\x2dlinux/sbin\x1e/opt/homebrew/opt/util\x2dlinux/bin
 SETUVAR nvm_data:/Users/shuuji3/\x2elocal/share/nvm
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
