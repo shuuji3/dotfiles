@@ -8,7 +8,6 @@
 [core]
 	autocrlf = input
 	excludesfile = ~/.gitignore_global
-	pager = delta
 
 [branch]
 	autosetuprebase = always
