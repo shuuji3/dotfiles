@@ -42,3 +42,6 @@
 
 [includeIf "gitdir:~/src/navagis/"]
 	path = ~/.gitconfig_navagis
+
+[http]
+	cookiefile = ~/.gitcookies
