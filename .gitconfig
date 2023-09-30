@@ -42,7 +42,7 @@
 [diff]
 	colorMoved = default
 
-[includeIf "gitdir:~/src/navagis/"]
+[includeIf "gitdir:~/dev/navagis/"]
 	path = ~/.gitconfig_navagis
 
 [http]
