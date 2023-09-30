@@ -1,9 +1,185 @@
-[character]
-success_symbol = "[>](bold green)"
+format = """$all\
+$kubernetes\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
 
+[character]
+success_symbol = "[|>](bold green)"
+error_symbol = "[|>](bold red)"
+
+[directory]
+style = 'red bold'
+format = '[\[$path\]]($style)[$read_only]($read_only_style) '
+read_only = " 󰌾"
+
+[git_branch]
+style = 'yellow bold'
+symbol = " "
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_commit]
+style = 'yellow bold'
+tag_symbol = '🔖 '
+only_detached = false
+tag_disabled = false
+
+[cmd_duration]
+format = '⏱ [$duration]($style) '
 [gcloud]
-format = 'on [$symbol ($active)]($style) '
+style = 'green bold'
+symbol = "󱇶"
+format = '[$symbol ($active)]($style) '
+
+[docker_context]
+disabled = true
+symbol = " "
 
 [kubernetes]
 disabled = false
+style = 'blue bold'
+symbol = "󱃾 "
+format = '[$symbol$context( \($namespace\))]($style) '
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
 
