@@ -7,7 +7,7 @@ function dotenv --description 'Load environment variables from .env file'
     end
 
     if test -e $envfile
-        for line in (cat $envfile)
+        for line in (cat $envfile | grep '=')
             set -xg (echo $line | cut -d = -f 1) (echo $line | cut -d = -f 2-)
         end
     end
