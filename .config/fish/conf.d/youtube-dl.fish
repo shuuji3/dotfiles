@@ -1,1 +1,1 @@
-alias you=youtube-dl
+alias you=yt-dlp
