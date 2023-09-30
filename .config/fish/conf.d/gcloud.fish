@@ -5,5 +5,5 @@
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 
 # Select configurations with fzf
-alias gcloud-config="CLOUDSDK_ACTIVE_CONFIG_NAME=(FZF_DEFAULT_COMMAND=\"gcloud config configurations list --format='get(name)'\" fzf --ansi --no-preview)"
+alias gcloud-config="export CLOUDSDK_ACTIVE_CONFIG_NAME=(FZF_DEFAULT_COMMAND=\"gcloud config configurations list --format='get(name)'\" fzf --ansi --no-preview)"
 
