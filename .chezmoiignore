@@ -2,8 +2,8 @@ README.md
 LICENSE
 
 # Temporarily disable file from macOS for Pop!_OS setup
-dot_config
-dot_emacs.d
-dot_gitconfig_macos
-dot_gitignore_global
-dot_tool-versions
+.config
+.emacs.d
+.gitconfig_macos
+.gitignore_global
+.tool-versions
