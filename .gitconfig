@@ -1,6 +1,7 @@
 [user]
 	name = TAKAHASHI Shuuji
 	email = shuuji3@gmail.com
+	signingkey = F15C887632129F5E
 
 [init]
 	defaultBranch = main
@@ -46,3 +47,7 @@
 
 [http]
 	cookiefile = ~/.gitcookies
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
