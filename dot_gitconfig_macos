@@ -1,0 +1,55 @@
+[user]
+	name = TAKAHASHI Shuuji
+	email = shuuji3@gmail.com
+	signingkey = F15C887632129F5E
+
+[init]
+	defaultBranch = main
+
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	ignorecase = false
+
+[branch]
+	autosetuprebase = always
+
+[alias]
+	br = branch
+	cm = commit
+	co = checkout
+	di = diff
+	st = status
+	sw = switch
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	side-by-side = true
+	light = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[includeIf "gitdir:~/dev/navagis/"]
+	path = ~/.gitconfig_navagis
+
+[http]
+	cookiefile = ~/.gitcookies
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[pull]
+	rebase = true
