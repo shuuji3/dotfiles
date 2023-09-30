@@ -2,7 +2,9 @@ README.md
 LICENSE
 
 # Temporarily disable file from macOS for Pop!_OS setup
-.config
+.config/gh
+.config/fish
+.config/karabiner
 .emacs.d
 .gitconfig_macos
 .gitignore_global
