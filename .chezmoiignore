@@ -3,7 +3,7 @@ LICENSE
 
 # Temporarily disable file from macOS for Pop!_OS setup
 .config/gh/hosts.yaml
-.config/fish
+.config/fish_macos
 .config/karabiner
 .emacs.d
 .gitconfig_macos
