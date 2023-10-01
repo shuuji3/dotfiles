@@ -1,7 +1,6 @@
 [user]
 	name = TAKAHASHI Shuuji
 	email = shuuji3@gmail.com
-
 [alias]
 	br = branch
 	cm = commit
@@ -9,6 +8,10 @@
 	di = diff
 	st = status
 	sw = switch
-
 [pull]
 	rebase = true
+[credential]
+	credentialStore = secretservice
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
