@@ -2,7 +2,7 @@ README.md
 LICENSE
 
 # Temporarily disable file from macOS for Pop!_OS setup
-.config/gh
+.config/gh/hosts.yaml
 .config/fish
 .config/karabiner
 .emacs.d
