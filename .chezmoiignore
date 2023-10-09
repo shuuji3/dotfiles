@@ -9,3 +9,4 @@ LICENSE
 .gitconfig_macos
 .gitignore_global
 .tool-versions
+.byobu/.ssh-agent
