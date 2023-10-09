@@ -1,6 +1,8 @@
 [user]
 	name = TAKAHASHI Shuuji
 	email = shuuji3@gmail.com
+[core]
+	excludesfile = ~/.gitignore
 [alias]
 	br = branch
 	cm = commit
