@@ -22,3 +22,5 @@
 	helper = !/usr/bin/gh auth git-credential
 [init]
 	defaultBranch = main
+[includeIf "gitdir:~/dev/navagis/"]
+	path = .gitconfig_navagis
