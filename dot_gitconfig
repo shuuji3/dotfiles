@@ -1,6 +1,7 @@
 [user]
 	name = TAKAHASHI Shuuji
 	email = shuuji3@gmail.com
+	signingkey = F15C887632129F5E
 [core]
 	excludesfile = ~/.gitignore
 [alias]
@@ -10,6 +11,8 @@
 	di = diff
 	st = status
 	sw = switch
+[commit]
+	gpgsign = true
 [pull]
 	rebase = true
 [credential]
